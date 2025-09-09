@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz for python</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #fcfcfc; }
+    .quiz-container { background: #fff; padding: 20px; border-radius: 8px; max-width: 600px; margin: auto; }
+    h2 { margin-bottom: 10px; }
+    .question { margin-bottom: 20px; }
+    .question p { font-weight: bold; }
+    .question label { display: block; margin: 5px 0; }
+    #submit-btn { padding: 10px 20px; font-size: 16px; }
+    #result { margin-top: 20px; font-size: 18px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h2>python Quiz</h2>
+
+    <form id="quiz-form">
+      <div class="question">
+        <p>1. what peice of code puts text on the screen</p>
+        <label><input type="radio" name="q1" value="A" /> A) if()</label>
+        <label><input type="radio" name="q1" value="B" /> B) print()</label>
+        <label><input type="radio" name="q1" value="C" /> C) then()</label>
+        <label><input type="radio" name="q1" value="D" /> D) input()</label>
+      </div>
+
+      <div class="question">
+        <p>2. how do you get user input</p>
+        <label><input type="radio" name="q2" value="A" /> A) input()</label>
+        <label><input type="radio" name="q2" value="B" /> B) save()</label>
+        <label><input type="radio" name="q2" value="C" /> C) check()</label>
+        <label><input type="radio" name="q2" value="D" /> D) text()</label>
+      </div>
+
+      <button type="button" id="submit-btn">check your score</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    document.getElementById("submit-btn").addEventListener("click", function () {
+      const answers = {
+        q1: "B",
+        q2: "A"
+      };
+      let score = 0;
+      let total = Object.keys(answers).length;
+
+      for (let key in answers) {
+        let selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === answers[key]) {
+          score++;
+        }
+      }
+
+      document.getElementById("result").textContent = `You scored ${score} out of ${total}`;
+    });
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dark Mode</title>
+  <style>
+    .dark-mode .quiz-container {
+  background-color: #2e2e2e;
+  border: 1px solid #444;
+  }
+    body {
+      font-family: Arial, sans-serif;
+      transition: background 0.3s, color 0.3s;
+      background: #f4f4f4;
+      color: #333;
+      padding: 20px;
+    }
+
+    .dark-mode {
+      background: #121212;
+      color: #f4f4f4;
+    }
+
+    .toggle-btn {
+      padding: 10px 20px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      background: #008cff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .toggle-btn:hover {
+      background: #004475;
+    }
+
+   
+
+  </style>
+</head>
+<body>
+  <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+</html>
