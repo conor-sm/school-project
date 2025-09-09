@@ -44,6 +44,14 @@
         <label><input type="radio" name="q3" value="D" /> D) 3 and 5</label>
       </div>
 
+      <div class="question">
+        <p>4. solve 397 x 186 =</p>
+        <label><input type="radio" name="q4" value="A" /> A) 67,382</label>
+        <label><input type="radio" name="q4" value="B" /> B) 73,842</label>
+        <label><input type="radio" name="q4" value="C" /> C) 76,246</label>
+        <label><input type="radio" name="q4" value="D" /> D) 65,890</label>
+      </div>
+
       <button type="button" id="submit-btn">check your score</button>
     </form>
 
@@ -55,7 +63,8 @@
       const answers = {
         q1: "B",
         q2: "D",
-        q3: "C"
+        q3: "C",
+        q4: "B"
       };
       let score = 0;
       let total = Object.keys(answers).length;
