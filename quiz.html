@@ -29,11 +29,19 @@
       </div>
 
       <div class="question">
-        <p>2. d squared=9 what 2 values can d be</p>
+        <p>2. d squared = 9 what 2 values can d be</p>
         <label><input type="radio" name="q2" value="A" /> A) 18 and -18</label>
         <label><input type="radio" name="q2" value="B" /> B) 1 and -1</label>
         <label><input type="radio" name="q2" value="C" /> C) 6 and -6</label>
         <label><input type="radio" name="q2" value="D" /> D) 3 and -3</label>
+      </div>
+
+      <div class="question">
+        <p>3. solve 7b + 6= -29</p>
+        <label><input type="radio" name="q3" value="A" /> A) 18 and -7</label>
+        <label><input type="radio" name="q3" value="B" /> B) 1 and -2.5</label>
+        <label><input type="radio" name="q3" value="C" /> C) 6 and -5</label>
+        <label><input type="radio" name="q3" value="D" /> D) 3 and 5</label>
       </div>
 
       <button type="button" id="submit-btn">check your score</button>
@@ -46,7 +54,8 @@
     document.getElementById("submit-btn").addEventListener("click", function () {
       const answers = {
         q1: "B",
-        q2: "D"
+        q2: "D",
+        q3: "C"
       };
       let score = 0;
       let total = Object.keys(answers).length;
