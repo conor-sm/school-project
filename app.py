@@ -6,9 +6,9 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('templates/quiz/<quiz_name>')
+@app.route('/quiz/<quiz_name>')
 def quiz(quiz_name):
     return render_template(f'{quiz_name}.html')
 
-if __name__ == '__index__':
+if __name__ == '__main__':
     app.run(debug=True)
