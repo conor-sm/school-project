@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quiz for python</title>
+  <title>Quiz for maths</title>
   <style>
     body { font-family: Arial, sans-serif; padding: 20px; background: #fcfcfc; }
     .quiz-container { background: #fff; padding: 20px; border-radius: 8px; max-width: 600px; margin: auto; }
@@ -17,7 +17,7 @@
 </head>
 <body>
   <div class="quiz-container">
-    <h2>python Quiz</h2>
+    <h2>maths quiz</h2>
 
     <form id="quiz-form">
       <div class="question">
@@ -29,11 +29,11 @@
       </div>
 
       <div class="question">
-        <p>2. question enter here</p>
-        <label><input type="radio" name="q2" value="A" /> A) answer a</label>
-        <label><input type="radio" name="q2" value="B" /> B) answer b</label>
-        <label><input type="radio" name="q2" value="C" /> C) answer c</label>
-        <label><input type="radio" name="q2" value="D" /> D) answer c</label>
+        <p>2. what is 6 squared</p>
+        <label><input type="radio" name="q2" value="A" /> A) 12</label>
+        <label><input type="radio" name="q2" value="B" /> B) 1</label>
+        <label><input type="radio" name="q2" value="C" /> C) 6</label>
+        <label><input type="radio" name="q2" value="D" /> D) 36</label>
       </div>
 
       <button type="button" id="submit-btn">check your score</button>
@@ -46,7 +46,7 @@
     document.getElementById("submit-btn").addEventListener("click", function () {
       const answers = {
         q1: "B",
-        q2: "answer letter"
+        q2: "D"
       };
       let score = 0;
       let total = Object.keys(answers).length;
