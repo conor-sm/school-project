@@ -21,11 +21,11 @@
 
     <form id="quiz-form">
       <div class="question">
-        <p>1. enter question</p>
-        <label><input type="radio" name="q1" value="A" /> A) answer a</label>
-        <label><input type="radio" name="q1" value="B" /> B) answer b</label>
-        <label><input type="radio" name="q1" value="C" /> C) answer c</label>
-        <label><input type="radio" name="q1" value="D" /> D) answer d</label>
+        <p>1. 1+1=</p>
+        <label><input type="radio" name="q1" value="A" /> A) 1</label>
+        <label><input type="radio" name="q1" value="B" /> B) 2</label>
+        <label><input type="radio" name="q1" value="C" /> C) 3</label>
+        <label><input type="radio" name="q1" value="D" /> D) 4</label>
       </div>
 
       <div class="question">
@@ -45,7 +45,7 @@
   <script>
     document.getElementById("submit-btn").addEventListener("click", function () {
       const answers = {
-        q1: "answer letter",
+        q1: "B",
         q2: "answer letter"
       };
       let score = 0;
