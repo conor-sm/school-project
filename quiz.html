@@ -52,6 +52,38 @@
         <label><input type="radio" name="q4" value="D" /> D) 65,890</label>
       </div>
 
+      <div class="question">
+       <p>5. What is the solution to x squared = 49 ?</p>
+        <label><input type="radio" name="q5" value="A" /> A)  x = -6,6</label>
+        <label><input type="radio" name="q5" value="B" /> B)  x = -7,7</label>
+        <label><input type="radio" name="q5" value="C" /> C)  x = -8,8 </label>
+        <label><input type="radio" name="q5" value="D" /> D)  x = -14,14 </label>
+      </div>
+
+      <div class="question">
+        <p>6. Solve the equation: 3x - 7 = 2x + 5</p>
+        <label><input type="radio" name="q6" value="A" /> A)  12</label>
+        <label><input type="radio" name="q6" value="B" /> B)  -12</label>
+        <label><input type="radio" name="q6" value="C" /> C)  7</label>
+        <label><input type="radio" name="q6" value="D" /> D)  6.5</label>
+      </div>
+
+      <div class="question">
+        <p>7. Make x the subject of the formula: 4x + y = 12</p>
+        <label><input type="radio" name="q7" value="A" /> A) 4y</label>
+        <label><input type="radio" name="q7" value="B" /> B) -0.25y</label>
+        <label><input type="radio" name="q7" value="C" /> C) 3 - 0.25y</label>
+        <label><input type="radio" name="q7" value="D" /> D) 12 - y</label>
+      </div>
+
+      <div class="question">
+        <p>8. Solve the equation: 5x + 3 = 2x + 18 </p>
+        <label><input type="radio" name="q8" value="A" /> A) 7.25</label>
+        <label><input type="radio" name="q8" value="B" /> B) -5</label>
+        <label><input type="radio" name="q8" value="C" /> C) -7</label>
+        <label><input type="radio" name="q8" value="D" /> D) 5</label>
+      </div>
+
       <button type="button" id="submit-btn">check your score</button>
     </form>
 
@@ -64,7 +96,11 @@
         q1: "B",
         q2: "D",
         q3: "C",
-        q4: "B"
+        q4: "B",
+        q5: "B",
+        q6: "A",
+        q7: "C",
+        q8: "D"
       };
       let score = 0;
       let total = Object.keys(answers).length;
