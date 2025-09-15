@@ -3,94 +3,181 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quiz for maths</title>
+  <title>Maths Quiz</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; background: #fcfcfc; }
-    .quiz-container { background: #fff; padding: 20px; border-radius: 8px; max-width: 600px; margin: auto; }
-    h2 { margin-bottom: 10px; }
-    .question { margin-bottom: 20px; }
-    .question p { font-weight: bold; }
-    .question label { display: block; margin: 5px 0; }
-    #submit-btn { padding: 10px 20px; font-size: 16px; }
-    #result { margin-top: 20px; font-size: 18px; font-weight: bold; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    .dark-mode {
+      background: #121212;
+      color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .toggle-btn {
+      background: #0078d4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .toggle-btn:hover {
+      background: #005a9e;
+    }
+
+    .quiz-container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .dark-mode .quiz-container {
+      background: #1e1e1e;
+      box-shadow: none;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      margin-bottom: 25px;
+    }
+
+    .question p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .question label {
+      display: block;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+
+    #submit-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #submit-btn:hover {
+      background: #218838;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: center;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
-  <div class="quiz-container">
-    <h2>Maths quiz</h2>
+  <div class="container">
+    <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
 
-    <form id="quiz-form">
-      <div class="question">
-        <p>1. Increace 1200 by 6%</p>
-        <label><input type="radio" name="q1" value="A" /> A) 1260</label>
-        <label><input type="radio" name="q1" value="B" /> B) 1272</label>
-        <label><input type="radio" name="q1" value="C" /> C) 1452</label>
-        <label><input type="radio" name="q1" value="D" /> D) 2466</label>
-      </div>
+    <div class="quiz-container">
+      <h2>Maths Quiz</h2>
+      <form id="quiz-form">
+        <!-- Questions -->
+        <div class="question">
+          <p>1. Increase 1200 by 6%</p>
+          <label><input type="radio" name="q1" value="A" /> A) 1260</label>
+          <label><input type="radio" name="q1" value="B" /> B) 1272</label>
+          <label><input type="radio" name="q1" value="C" /> C) 1452</label>
+          <label><input type="radio" name="q1" value="D" /> D) 2466</label>
+        </div>
 
-      <div class="question">
-        <p>2. d squared = 9 what 2 values can d be</p>
-        <label><input type="radio" name="q2" value="A" /> A) 18 and -18</label>
-        <label><input type="radio" name="q2" value="B" /> B) 1 and -1</label>
-        <label><input type="radio" name="q2" value="C" /> C) 6 and -6</label>
-        <label><input type="radio" name="q2" value="D" /> D) 3 and -3</label>
-      </div>
+        <div class="question">
+          <p>2. \( d^2 = 9 \). What two values can \( d \) be?</p>
+          <label><input type="radio" name="q2" value="A" /> A) 18 and -18</label>
+          <label><input type="radio" name="q2" value="B" /> B) 1 and -1</label>
+          <label><input type="radio" name="q2" value="C" /> C) 6 and -6</label>
+          <label><input type="radio" name="q2" value="D" /> D) 3 and -3</label>
+        </div>
 
-      <div class="question">
-        <p>3. Solve 7b + 6= -29</p>
-        <label><input type="radio" name="q3" value="A" /> A) -7</label>
-        <label><input type="radio" name="q3" value="B" /> B) -2.5</label>
-        <label><input type="radio" name="q3" value="C" /> C) -5</label>
-        <label><input type="radio" name="q3" value="D" /> D) 5</label>
-      </div>
+        <div class="question">
+          <p>3. Solve: \( 7b + 6 = -29 \)</p>
+          <label><input type="radio" name="q3" value="A" /> A) -7</label>
+          <label><input type="radio" name="q3" value="B" /> B) -2.5</label>
+          <label><input type="radio" name="q3" value="C" /> C) -5</label>
+          <label><input type="radio" name="q3" value="D" /> D) 5</label>
+        </div>
 
-      <div class="question">
-        <p>4. Solve 397 x 186 =</p>
-        <label><input type="radio" name="q4" value="A" /> A) 67,382</label>
-        <label><input type="radio" name="q4" value="B" /> B) 73,842</label>
-        <label><input type="radio" name="q4" value="C" /> C) 76,246</label>
-        <label><input type="radio" name="q4" value="D" /> D) 65,890</label>
-      </div>
+        <div class="question">
+          <p>4. Solve: \( 397 \times 186 \)</p>
+          <label><input type="radio" name="q4" value="A" /> A) 67,382</label>
+          <label><input type="radio" name="q4" value="B" /> B) 73,842</label>
+          <label><input type="radio" name="q4" value="C" /> C) 76,246</label>
+          <label><input type="radio" name="q4" value="D" /> D) 65,890</label>
+        </div>
 
-      <div class="question">
-       <p>5. What is the solution to x squared = 49 ?</p>
-        <label><input type="radio" name="q5" value="A" /> A)  x = -6,6</label>
-        <label><input type="radio" name="q5" value="B" /> B)  x = -7,7</label>
-        <label><input type="radio" name="q5" value="C" /> C)  x = -8,8 </label>
-        <label><input type="radio" name="q5" value="D" /> D)  x = -14,14 </label>
-      </div>
+        <div class="question">
+          <p>5. What is the solution to \( x^2 = 49 \)?</p>
+          <label><input type="radio" name="q5" value="A" /> A) -6, 6</label>
+          <label><input type="radio" name="q5" value="B" /> B) -7, 7</label>
+          <label><input type="radio" name="q5" value="C" /> C) -8, 8</label>
+          <label><input type="radio" name="q5" value="D" /> D) -14, 14</label>
+        </div>
 
-      <div class="question">
-        <p>6. Solve the equation: 3x - 7 = 2x + 5</p>
-        <label><input type="radio" name="q6" value="A" /> A)  12</label>
-        <label><input type="radio" name="q6" value="B" /> B)  -12</label>
-        <label><input type="radio" name="q6" value="C" /> C)  7</label>
-        <label><input type="radio" name="q6" value="D" /> D)  6.5</label>
-      </div>
+        <div class="question">
+          <p>6. Solve: \( 3x - 7 = 2x + 5 \)</p>
+          <label><input type="radio" name="q6" value="A" /> A) 12</label>
+          <label><input type="radio" name="q6" value="B" /> B) -12</label>
+          <label><input type="radio" name="q6" value="C" /> C) 7</label>
+          <label><input type="radio" name="q6" value="D" /> D) 6.5</label>
+        </div>
 
-      <div class="question">
-        <p>7. Make x the subject of the formula: 4x + y = 12</p>
-        <label><input type="radio" name="q7" value="A" /> A) 4y</label>
-        <label><input type="radio" name="q7" value="B" /> B) -0.25y</label>
-        <label><input type="radio" name="q7" value="C" /> C) 3 - 0.25y</label>
-        <label><input type="radio" name="q7" value="D" /> D) 12 - y</label>
-      </div>
+        <div class="question">
+          <p>7. Make \( x \) the subject: \( 4x + y = 12 \)</p>
+          <label><input type="radio" name="q7" value="A" /> A) 4y</label>
+          <label><input type="radio" name="q7" value="B" /> B) -0.25y</label>
+          <label><input type="radio" name="q7" value="C" /> C) 3 - 0.25y</label>
+          <label><input type="radio" name="q7" value="D" /> D) 12 - y</label>
+        </div>
 
-      <div class="question">
-        <p>8. Solve the equation: 5x + 3 = 2x + 18 </p>
-        <label><input type="radio" name="q8" value="A" /> A) 7.25</label>
-        <label><input type="radio" name="q8" value="B" /> B) -5</label>
-        <label><input type="radio" name="q8" value="C" /> C) -7</label>
-        <label><input type="radio" name="q8" value="D" /> D) 5</label>
-      </div>
+        <div class="question">
+          <p>8. Solve: \( 5x + 3 = 2x + 18 \)</p>
+          <label><input type="radio" name="q8" value="A" /> A) 7.25</label>
+          <label><input type="radio" name="q8" value="B" /> B) -5</label>
+          <label><input type="radio" name="q8" value="C" /> C) -7</label>
+          <label><input type="radio" name="q8" value="D" /> D) 5</label>
+        </div>
 
-      <button type="button" id="submit-btn">check your score</button>
-    </form>
+        <button type="button" id="submit-btn">Check Your Score</button>
+      </form>
 
-    <div id="result"></div>
+      <div id="result"></div>
+    </div>
   </div>
 
   <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
     document.getElementById("submit-btn").addEventListener("click", function () {
       const answers = {
         q1: "B",
@@ -114,59 +201,6 @@
 
       document.getElementById("result").textContent = `You scored ${score} out of ${total}`;
     });
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dark Mode</title>
-  <style>
-    .dark-mode .quiz-container {
-  background-color: #2e2e2e;
-  border: 1px solid #444;
-  }
-    body {
-      font-family: Arial, sans-serif;
-      transition: background 0.3s, color 0.3s;
-      background: #f4f4f4;
-      color: #333;
-      padding: 20px;
-    }
-
-    .dark-mode {
-      background: #121212;
-      color: #f4f4f4;
-    }
-
-    .toggle-btn {
-      padding: 10px 20px;
-      margin-bottom: 20px;
-      cursor: pointer;
-      background: #008cff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-    }
-
-    .toggle-btn:hover {
-      background: #004475;
-    }
-
-   
-
-  </style>
-</head>
-<body>
-  <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
-
-
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle("dark-mode");
-    }
   </script>
 </body>
 </html>
